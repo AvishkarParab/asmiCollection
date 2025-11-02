@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Sidebar from "../../sidebar";
 import ManageEmployeeComponent from "./manage-employee";
 import { IEmployeeInfo } from "@/types";

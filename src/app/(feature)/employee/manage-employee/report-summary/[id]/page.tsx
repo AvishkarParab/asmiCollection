@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { IEmployeeInfo } from "@/types";
+import { IEmployeeReportDetails } from "@/types";
 import Sidebar from "../../../../sidebar";
 import ClientWrapper from "./client-wrapper";
 
@@ -32,7 +32,7 @@ export default async function UpdateEmployee({
     redirect("/employee/manage-employee");
   }
 
-  const selectedEmployee: IEmployeeInfo | null =
+  const selectedEmployee: IEmployeeReportDetails | null =
     await getSelectedEmployeeDetails(id);
 
   if (!selectedEmployee) {

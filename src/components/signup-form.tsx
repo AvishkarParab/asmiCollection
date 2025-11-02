@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Eye } from "lucide-react";
+import { Spinner } from "./ui/spinner";
 
 const UserSchema = z.object({
   name: z.string(),
@@ -183,7 +184,16 @@ export function SignupForm({
               />
 
               <Field>
-                <Button type="submit">Register</Button>
+                <Button type="submit" onSubmit={handleSubmit(onSubmit)}>
+                  {isSubmitting ? (
+                    <div className="flex justify-items-center align-middle">
+                      Registering
+                      <Spinner className="ms-2 my-1" />
+                    </div>
+                  ) : (
+                    "Register"
+                  )}
+                </Button>
                 <FieldDescription className="text-center">
                   Already have an account? <a href="/login">Login</a>
                 </FieldDescription>

@@ -1,9 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { IEmployeeInfo } from "@/types";
+import { IEmployeeReportDetails } from "@/types";
 
-// Dynamically import PDF component on client only
 const EmployeeReportSummaryComponent = dynamic(
   () => import("./report-summary"),
   { ssr: false, loading: () => <p>Loading report...</p> }
@@ -12,7 +11,7 @@ const EmployeeReportSummaryComponent = dynamic(
 export default function ClientWrapper({
   employee,
 }: {
-  employee: IEmployeeInfo;
+  employee: IEmployeeReportDetails;
 }) {
   return <EmployeeReportSummaryComponent employee={employee} />;
 }

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { IEmployeeInfo } from "@/types";
 import Sidebar from "../sidebar";
 import DashboardPage from "./dashboard";

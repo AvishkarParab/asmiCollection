@@ -33,19 +33,3 @@ export async function POST(request: Request) {
     type: "success",
   });
 }
-
-export async function GET() {
-  try {
-    await dbConnect();
-
-    const employees = await Employee.find();
-    return NextResponse.json({
-      message: "Employees Retrived Successfully!",
-      data: employees,
-      status: 200,
-      type: "success",
-    });
-  } catch (error) {
-    console.log("Something went wrong!", error);
-  }
-}
