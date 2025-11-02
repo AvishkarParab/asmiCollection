@@ -25,7 +25,9 @@ export async function GET(
     async function getEmployeeHierarchy(
       empId: string
     ): Promise<EmployeeHierarchy | null> {
-      const employee = await Employee.findById(empId).lean<EmployeeInfo>();
+      const employee = await Employee.findById(empId)
+        .populate("referredFrom")
+        .lean<EmployeeInfo>();
       if (!employee) return null;
 
       const reportees = await Employee.find({

@@ -58,7 +58,7 @@ export default function UpdateEmployeeComponent({
       name: selectedEmployee.name,
       age: selectedEmployee.age,
       email: selectedEmployee.email,
-      referredFrom: selectedEmployee.referredFrom,
+      referredFrom: selectedEmployee.referredFrom._id,
       referralCode: selectedEmployee.referralCode,
       isCommissionPaid: selectedEmployee.isCommissionPaid,
     },
