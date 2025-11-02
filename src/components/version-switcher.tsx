@@ -2,27 +2,20 @@
 
 import * as React from "react";
 import { Shirt } from "lucide-react";
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar";
+import { SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar";
 
 export function BrandDetails() {
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <SidebarMenuButton
-          size="lg"
-          className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-        >
-          <div className="bg-white text-blue-600 flex aspect-square size-8 items-center justify-center rounded-lg">
+        <div className="flex p-4">
+          <div className="bg-blue-950 text-primary">
             <Shirt className="size-4 " />
           </div>
-          <div className="flex flex-col gap-0.5 leading-none">
+          <div className="flex flex-col gap-2 mx-2 leading-none">
             <span className="font-semibold">Asmi Collection</span>
           </div>
-        </SidebarMenuButton>
+        </div>
       </SidebarMenuItem>
     </SidebarMenu>
   );

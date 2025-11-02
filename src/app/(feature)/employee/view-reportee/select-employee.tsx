@@ -151,7 +151,7 @@ export default function SelectEmployeeComponent({ employees }: EmployeeProps) {
       </div>
 
       {employeeDetails ? (
-        <div className="my-3">
+        <div className="mt-5">
           <ReporteeChartComponent employeeDetails={employeeDetails} />
         </div>
       ) : null}

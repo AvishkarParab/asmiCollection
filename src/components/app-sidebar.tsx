@@ -47,7 +47,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   return (
     <Sidebar {...props}>
-      <SidebarHeader className="bg-blue-700 text-white">
+      <SidebarHeader className="bg-blue-950 text-primary">
         <BrandDetails />
       </SidebarHeader>
       <SidebarContent className="bg-primary text-white">

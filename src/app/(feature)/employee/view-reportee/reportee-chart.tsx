@@ -1,7 +1,7 @@
 "use client";
 import { Tree, TreeNode } from "react-organizational-chart";
 import { CircleUserRound } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import styles from "./reportee-chart.module.css";
 import { IEmployeeDetailsInfo } from "@/types";
 
@@ -18,17 +18,15 @@ const RenderTreeNode = ({ employee }: EmployeeProps) => {
     <TreeNode
       label={
         <div className={styles.tree_class}>
-          <Card className="bg-sky-600 text-white">
-            <CardContent>
+          <Card className="bg-sky-600 text-white py-2">
+            <CardContent className="px-0">
               <div className="flex justify-center">
                 <div className="self-center">
-                  <CircleUserRound size={60} strokeWidth={1} />
+                  <CircleUserRound size={40} strokeWidth={1} />
                 </div>
               </div>
-            </CardContent>
-            <CardFooter className="self-center">
               <div>{employee.name}</div>
-            </CardFooter>
+            </CardContent>
           </Card>
         </div>
       }
@@ -51,17 +49,15 @@ export default function ReporteeChartComponent({
           <Tree
             label={
               <div className={styles.tree_class}>
-                <Card className="bg-sky-600 text-white">
-                  <CardContent>
+                <Card className="bg-sky-600 text-white py-2">
+                  <CardContent className="px-0">
                     <div className="flex justify-center">
                       <div className="self-center">
-                        <CircleUserRound size={60} strokeWidth={1} />
+                        <CircleUserRound size={40} strokeWidth={1} />
                       </div>
                     </div>
-                  </CardContent>
-                  <CardFooter className="self-center">
                     <div>{employeeDetails.name}</div>
-                  </CardFooter>
+                  </CardContent>
                 </Card>
               </div>
             }
