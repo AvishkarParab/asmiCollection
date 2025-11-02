@@ -1,36 +1,41 @@
 import { app, BrowserWindow } from "electron";
+import { spawn } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+let mainWindow;
+let nextProcess;
+
 function createWindow() {
-  const win = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {
-      preload: path.join(__dirname, "preload.mjs"),
+      nodeIntegration: false,
+      contextIsolation: true,
     },
   });
 
-  const isDev = !app.isPackaged;
-
-  const startURL = isDev
-    ? "http://localhost:3000/login"
-    : `file://${path.join(__dirname, "/out/index.html")}`;
-
-  win.loadURL(startURL);
+  // Load the Next.js local server
+  mainWindow.loadURL("http://localhost:3000/login");
 }
 
 app.whenReady().then(() => {
-  createWindow();
-
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  // Start the Next.js production server
+  nextProcess = spawn("npm", ["run", "start:web"], {
+    cwd: __dirname,
+    shell: true,
   });
+
+  setTimeout(() => {
+    createWindow();
+  }, 5000);
 });
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+  if (nextProcess) nextProcess.kill();
 });

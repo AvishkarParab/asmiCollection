@@ -1,12 +1,14 @@
 {
   "name": "asmicollection",
   "version": "0.1.0",
+  "description": "Asmi Collection Desktop App built with Next.js + Electron",
+  "author": "Avishkar Parab",
   "private": true,
   "type": "module",
   "main": "electron.mjs",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build:web": "next build && next export",
+    "build:web": "next build",
     "start:web": "next start",
     "lint": "eslint",
     "desktop:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000/login && electron .\"",
@@ -60,6 +62,10 @@
   "build": {
     "appId": "com.asmicollection.desktop",
     "productName": "AsmiCollection",
+    "copyright": "© 2025 Avishkar Parab",
+    "win": {
+      "icon": "public/asmi.ico"
+    },
     "directories": {
       "output": "release"
     },

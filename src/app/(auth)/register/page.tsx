@@ -1,4 +1,4 @@
-import { GalleryVerticalEnd } from "lucide-react";
+import Image from "next/image";
 import { SignupForm } from "@/components/signup-form";
 
 export default function RegisterPage() {
@@ -7,7 +7,13 @@ export default function RegisterPage() {
       <div className="flex w-full max-w-sm flex-col gap-6">
         <a href="#" className="flex items-center gap-2 self-center font-medium">
           <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-            <GalleryVerticalEnd className="size-4" />
+            <Image
+              src="/asmicollection_logo.png"
+              alt="My Logo"
+              width={100}
+              height={100}
+              className="size-6"
+            />
           </div>
           Asmi Collection
         </a>
