@@ -6,7 +6,7 @@ import { ColumnDef } from "@tanstack/react-table";
 export function HomeEmployeTableColumns(): ColumnDef<IEmployeeInfo>[] {
   const columns: ColumnDef<IEmployeeInfo>[] = [
     { accessorKey: "name", header: "Name" },
-    { accessorKey: "email", header: "Email" },
+    { accessorKey: "phone", header: "Phone" },
     {
       accessorKey: "referredFrom",
       header: "Referred From",

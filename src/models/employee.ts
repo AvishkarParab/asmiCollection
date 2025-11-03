@@ -4,7 +4,7 @@ const employeeSchema = new Schema(
   {
     name: String,
     age: String,
-    email: String,
+    phone: String,
     referredFrom: {
       type: Schema.Types.ObjectId,
       ref: "Employee",

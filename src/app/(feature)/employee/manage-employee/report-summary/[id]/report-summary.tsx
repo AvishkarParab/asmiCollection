@@ -73,53 +73,6 @@ export default function EmployeeReportSummaryComponent({
     return <p className="text-center mt-10">Employee not found.</p>;
   }
 
-  // PDF Document component
-  // const EmployeeReportDocument = () => (
-  //   <Document>
-  //     <Page size="A4" style={styles.page}>
-  //       {/* HEADER */}
-  //       <View style={styles.header}>
-  //         <Text style={styles.title}>Employee Report Summary</Text>
-  //       </View>
-
-  //       {/* BASIC INFO */}
-  //       <View style={styles.section}>
-  //         <Text style={styles.label}>Name:</Text>
-  //         <Text style={styles.text}>{employee.name}</Text>
-
-  //         <Text style={styles.label}>Email:</Text>
-  //         <Text style={styles.text}>{employee.email}</Text>
-
-  //         <Text style={styles.label}>Age:</Text>
-  //         <Text style={styles.text}>{employee.age}</Text>
-  //       </View>
-
-  //       {/* REFERRAL INFO */}
-  //       <View style={styles.section}>
-  //         <Text style={styles.title}>Referral Details</Text>
-  //         <Text style={styles.text}>
-  //           <Text style={styles.label}>Referred From: </Text>
-  //           {employee.referredFrom || "N/A"}
-  //         </Text>
-  //         <Text style={styles.text}>
-  //           <Text style={styles.label}>Referral Code: </Text>
-  //           {employee.referralCode || "N/A"}
-  //         </Text>
-  //       </View>
-
-  //       {/* COMMISSION STATUS */}
-  //       <View style={styles.section}>
-  //         <Text style={styles.title}>Commission Paid</Text>
-  //         <Text style={styles.text}>
-  //           {employee.isCommissionPaid === "Yes"
-  //             ? "Commission has been paid."
-  //             : "Commission pending."}
-  //         </Text>
-  //       </View>
-  //     </Page>
-  //   </Document>
-  // );
-
   const EmployeeReportDocument = () => (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -136,8 +89,8 @@ export default function EmployeeReportSummaryComponent({
           </View>
 
           <View style={styles.tableRow}>
-            <Text style={styles.tableCol}>Email</Text>
-            <Text style={styles.tableCol}>{employee.email}</Text>
+            <Text style={styles.tableCol}>Phone</Text>
+            <Text style={styles.tableCol}>{employee.phone}</Text>
           </View>
 
           <View style={styles.tableRow}>

@@ -10,7 +10,7 @@ export default function EmployeeComponent() {
       icon: <UserPlus size={40} strokeWidth={2} />,
     },
     {
-      title: "View Reportee",
+      title: "View Referral Chart",
       url: "employee/view-reportee",
       icon: <UserRoundSearch size={40} strokeWidth={2} />,
     },

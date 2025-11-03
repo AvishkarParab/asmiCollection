@@ -32,7 +32,7 @@ const EmployeeSchema = z.object({
   id: z.string(),
   name: z.string().min(1, "Name is required."),
   age: z.string(),
-  email: z.email("Invalid email address"),
+  phone: z.string().regex(/^[6-9]\d{9}$/, "Invalid Indian phone number"),
   referredFrom: z.string().nullable().optional(),
   referralCode: z.string().optional(),
   isCommissionPaid: z.string(),
@@ -56,7 +56,7 @@ export default function AddEmployeeComponent({ employees }: AddEmployeeProps) {
       id: "",
       name: "",
       age: "",
-      email: "",
+      phone: "",
       referredFrom: null,
       referralCode: "",
       isCommissionPaid: "no",
@@ -142,18 +142,18 @@ export default function AddEmployeeComponent({ employees }: AddEmployeeProps) {
 
                   <div>
                     <Controller
-                      name="email"
+                      name="phone"
                       control={control}
                       render={({ field, fieldState }) => (
                         <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor="email">
-                            Employee Email:
+                          <FieldLabel htmlFor="phone">
+                            Employee Phone:
                           </FieldLabel>
                           <Input
                             {...field}
-                            id="email"
+                            id="phone"
                             aria-invalid={fieldState.invalid}
-                            placeholder="Enter employee email"
+                            placeholder="Enter employee phone"
                           />
                           {fieldState.invalid && (
                             <FieldError errors={[fieldState.error]} />

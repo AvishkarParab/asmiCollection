@@ -4,10 +4,10 @@ import dbConnect from "@/lib/dbConnect";
 import Employee from "@/models/employee";
 
 export async function POST(request: Request) {
-  const { name, age, email, referredFrom, referralCode, isCommissionPaid } =
+  const { name, age, phone, referredFrom, referralCode, isCommissionPaid } =
     await request.json();
 
-  if (!name || !age || !email || !isCommissionPaid) {
+  if (!name || !age || !phone || !isCommissionPaid) {
     return NextResponse.json({
       message: "Invalid Data",
       status: 400,
@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   const employee = await Employee.create({
     name,
     age,
-    email,
+    phone,
     referredFrom: new mongoose.Types.ObjectId(referredFrom),
     referralCode,
     isCommissionPaid,
